@@ -37,3 +37,81 @@ a:hover {
   border-radius: 50%;
   cursor: pointer;
 }
+
+#cards {
+width: 100%;
+height: 100%;
+}
+
+.cards-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  list-style: none;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card img{
+  width: 327px;
+  height: 350px;
+}
+
+.card {
+  width: 350px;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #313e48;;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sub {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  margin: 0;
+}
+
+.title {
+  font-size: 1.2rem;
+}
+.desc  {
+  width: 78%;
+  font-size: 0.8rem;
+}
+
+
+.red {
+  color: red;
+  text-shadow:1px 1px 4px #000;
+}
+
+.white{
+  color: #fff;
+  text-shadow:1px 1px 4px #000;
+}
+
+.comments {
+  width: 90px;
+  height: 40px;
+  margin-left: auto;
+}
+.btn {
+  background-color: #3c4e5c;
+  color: #fff;
+  border: 1px solid #192833;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #192833;;
+  color: #fff;
+  border: 1px solid #3c4e5c;
+  border-radius: 5px;
+  cursor: pointer;
+}
