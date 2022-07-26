@@ -1,8 +1,9 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# WEBPACK TEMPLATE^
+# MicroMovies
 
-web pack template to use on future webpack projects 
+an api based app to show lastest shows (movies , series)
+
 ## Getting Started
 
 - Clone the repo.
@@ -22,9 +23,13 @@ web pack template to use on future webpack projects
 
 ## Authors
 
-👤 **Hamma Azarok**
+👤 **Hamma**
 
 - GitHub: [@hammaazarok](https://github.com/hammaazarok)
+
+👤 **Rochidzwa**
+
+- GitHub: [@rotshidzw](https://github.com/rotshidzw)
 
 ## 🤝 Contributing
 
