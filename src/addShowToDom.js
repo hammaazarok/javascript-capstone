@@ -1,8 +1,8 @@
-const addShow = (name,imageUrl, description,liked,numberOfLikes) => {
-    const ShowsContainer = document.getElementById('cards-container');
-    const showHTML = document.createElement('li');
-    showHTML.classList.add('card');
-    showHTML.innerHTML = `
+const addShow = (name, imageUrl, description, liked, numberOfLikes) => {
+  const ShowsContainer = document.getElementById('cards-container');
+  const showHTML = document.createElement('li');
+  showHTML.classList.add('card');
+  showHTML.innerHTML = `
     <img src="${imageUrl}" alt="${name}">
     <div class="sub">
         <p class="title"><b>${name}</b></p>
@@ -14,8 +14,7 @@ const addShow = (name,imageUrl, description,liked,numberOfLikes) => {
     </div>
     <button type="button" class="comments btn">Comments</button>
               `;
-    ShowsContainer.appendChild(showHTML);
-  };
+  ShowsContainer.appendChild(showHTML);
+};
 
-  export default addShow;
-  
+export default addShow;
