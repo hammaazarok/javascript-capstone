@@ -1,3 +1,39 @@
-h2{
-    color: red;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,200&display=swap");
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+.flex {
+  display: flex;
+  background-color: rgb(49, 62, 72);
+}
+
+header {
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  margin-right: 5%;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.logo {
+  margin-right: 5%;
+  width: 50px;
+  height: 50px;
+  background: url(https://toppng.com/uploads/preview/movies-clipart-11550721226fhbztgpnlz.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  cursor: pointer;
 }
