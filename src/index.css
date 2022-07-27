@@ -144,6 +144,7 @@ p {
 .showId {
   display: none;
 }
+
 .modal {
   display: block;
   position: fixed;

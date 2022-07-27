@@ -1,16 +1,16 @@
-import loadShows from "./loadShows.js";
+import loadShows from './loadShows.js';
 
-const showModal = document.querySelector("#modal-section");
-const popModal = document.createElement("div");
-popModal.setAttribute("class", "modal");
+const showModal = document.querySelector('#modal-section');
+const popModal = document.createElement('div');
+popModal.setAttribute('class', 'modal');
 const commentsPopUp = async (data, id) => {
-    const commentId = id;
-    data.forEach((show) => {
-      show = show.show;
-      const showId = show.id;
-      /* console.log(showId,commentId) */
-      if (showId.toString() === commentId.toString()) {
-        popModal.innerHTML = `<div class="modal-content">
+  const commentId = id;
+  data.forEach((show) => {
+    show = show.show;
+    const showId = show.id;
+    /* console.log(showId,commentId) */
+    if (showId.toString() === commentId.toString()) {
+      popModal.innerHTML = `<div class="modal-content">
   <span class="d-flex jc-flex-end"><i class="fas fa-window-close" aria-hidden="true"></i></span>
   <div class="d-flex flex-d-c">
       <img src=${show.image.medium} alt="show image" class="popup-img show mb-3">
@@ -41,18 +41,17 @@ const commentsPopUp = async (data, id) => {
       </form>
   </div>
 </div>`;
-      }
-    });
-    showModal.appendChild(popModal);
-    showModal.style.display = "block";
-    const closeBtn = document.querySelector(".fa-window-close");
-    document.addEventListener("click", (event) => {
-      if (event.target === closeBtn) {
-        showModal.style.display = "none";
-        window.location.reload();
-      }
-    });
-  
+    }
+  });
+  showModal.appendChild(popModal);
+  showModal.style.display = 'block';
+  const closeBtn = document.querySelector('.fa-window-close');
+  document.addEventListener('click', (event) => {
+    if (event.target === closeBtn) {
+      showModal.style.display = 'none';
+      window.location.reload();
+    }
+  });
 
   await loadShows();
 };
