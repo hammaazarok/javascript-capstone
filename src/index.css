@@ -121,7 +121,6 @@ p {
 }
 
 .comments {
-  width: 90px;
   height: 40px;
   margin-left: auto;
 }
@@ -140,6 +139,10 @@ p {
   border: 1px solid #3c4e5c;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.showId {
+  display: none;
 }
 
 .modal {
