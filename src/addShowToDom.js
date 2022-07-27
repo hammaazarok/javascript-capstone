@@ -1,4 +1,4 @@
-const addShow = (name, imageUrl, description, liked, numberOfLikes,id) => {
+const addShow = (name, imageUrl, description, liked, numberOfLikes, id) => {
   const ShowsContainer = document.getElementById('cards-container');
   const showHTML = document.createElement('li');
   showHTML.classList.add('card');
