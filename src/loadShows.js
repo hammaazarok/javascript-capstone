@@ -1,4 +1,5 @@
 import addShow from './addShowToDom.js';
+
 const loadShows = async () => {
   const showsContainer = document.getElementById('cards-container');
   showsContainer.innerHTML = '';

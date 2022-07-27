@@ -1,9 +1,10 @@
 import './index.css';
 import loadShows from './loadShows.js';
-import addShowToDom from './addShowToDom';
-import commentsPopUp from './commentsPopUp.js';
+import commentspopup from './commentspopup.js';
+// import addShowToDom from './addShowToDom';
 
-
-loadShows().then((value)=>{console.log(value)
-  commentsPopUp(value,"812");
-},(error)=>{error});
+loadShows().then((value) => {
+  // console.log(value);
+  commentspopup(value, '812');
+});
+// (error) => { error; });

@@ -1,15 +1,16 @@
 import loadShows from './loadShows.js';
+
 const showModal = document.querySelector('#modal-section');
 const popModal = document.createElement('div');
 popModal.setAttribute('class', 'modal');
-const commentsPopUp = async (data,id) => {
+const commentspopup = async (data, id) => {
   document.body.addEventListener('click', (event) => {
     if (event.target.className === 'comment-btn') {
       const commentId = id;
       data.forEach((show) => {
         show = show.show;
         const showId = show.id;
-        console.log(showId,commentId)
+        /* console.log(showId,commentId) */
         if (showId.toString() === commentId.toString()) {
           popModal.innerHTML = `<div class="modal-content">
   <span class="d-flex jc-flex-end"><i class="fas fa-window-close" aria-hidden="true"></i></span>
@@ -57,4 +58,4 @@ const commentsPopUp = async (data,id) => {
   });
   await loadShows();
 };
-export default commentsPopUp;
+export default commentspopup;
