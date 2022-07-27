@@ -121,3 +121,7 @@ p {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.showId {
+  display: none;
+}
