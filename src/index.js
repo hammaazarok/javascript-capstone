@@ -10,7 +10,7 @@ loadShows().then(
         const id = show.parentElement.parentElement.children[3].innerHTML;
         const likes = parseInt(countLikes(id), 10) + 1;
         show.parentElement.parentElement.children[2].children[1].innerHTML = `${likes} likes`;
-        addNewLike(show);
+        addNewLike(id);
         likeUpdate(id, likes);
       });
     });
