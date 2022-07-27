@@ -1,8 +1,8 @@
 import './index.css';
 import loadShows from './loadShows.js';
-import commentspopup from './commentspopup.js';
+import commentsPopUp from './commentsPopUp.js';
 
 loadShows().then((value) => {
-  commentspopup(value, '812');
+  commentsPopUp(value, '812');
 });
 // (error) => { error; });

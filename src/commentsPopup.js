@@ -3,7 +3,7 @@ import loadShows from './loadShows.js';
 const showModal = document.querySelector('#modal-section');
 const popModal = document.createElement('div');
 popModal.setAttribute('class', 'modal');
-const commentspopup = async (data, id) => {
+const commentsPopUp = async (data, id) => {
   document.body.addEventListener('click', (event) => {
     if (event.target.className === 'comment-btn') {
       const commentId = id;
@@ -58,4 +58,4 @@ const commentspopup = async (data, id) => {
   });
   await loadShows();
 };
-export default commentspopup;
+export default commentsPopUp;

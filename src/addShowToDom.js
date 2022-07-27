@@ -12,7 +12,7 @@ const addShow = (name, imageUrl, description, liked, numberOfLikes) => {
         <span class="desc">${description}</span>
         <p>${numberOfLikes} likes</p>
     </div>
-    <button type="button" id="${showHTML}" class="comment-btn"  onclick"commentspopup(${showHTML})" role="button">Comments</button>
+    <button type="button" id="${showHTML}" class="comment-btn"  onclick"commentsPopUp(${showHTML})" role="button">Comments</button>
               `;
   ShowsContainer.appendChild(showHTML);
 };
