@@ -121,3 +121,100 @@ p {
   border-radius: 5px;
   cursor: pointer;
 }
+.modal {
+  display: block;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  overflow: auto;
+}
+
+.modal-content {
+  width: 80%;
+  height: auto;
+  margin: 5% auto;
+  background-color: #fff;
+  box-shadow: 0 10px 10px 0 rgb(24, 4, 43);
+  border-radius: 10px;
+  padding: 2%;
+}
+
+.jc-flex-end {
+  justify-content: flex-end;
+}
+
+.fa-window-close {
+  font-size: 2em;
+  padding: 20px;
+  color: rgb(68, 173, 68);
+}
+
+.fa-window-close:hover {
+  color: rgb(136, 141, 71);
+}
+
+.popup-img {
+  width: 25%;
+  margin: 0 auto;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.8);
+}
+
+#comment-form {
+  width: 50%;
+  margin: 10px auto;
+  background-color: rgb(43, 137, 226);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.8);
+}
+
+#showDesc {
+  width: 80%;
+  margin: 0 auto;
+  line-height: 32px;
+  font-weight: bold;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.form {
+  justify-content: center;
+}
+
+.fa-comment {
+  color: rgb(132, 223, 166);
+}
+
+button {
+  width: auto;
+  color: rgb(35, 155, 24);
+  font-weight: bold;
+  background-color: rgb(187, 179, 179);
+  padding: 5px;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.8);
+}
+
+button:hover {
+  color: #fff;
+  font-weight: bold;
+  background-color: rgb(231, 160, 231);
+  padding: 6px;
+}
+
+h1,
+h2,
+h3,
+h4 h5,
+h6 {
+  font-weight: bold;
+}
+
+.font-w-bold {
+  font-weight: bold;
+}
