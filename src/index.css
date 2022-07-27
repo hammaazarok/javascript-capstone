@@ -11,6 +11,26 @@
   background-color: rgb(49, 62, 72);
 }
 
+.d-flex {
+  display: flex;
+}
+
+.flex-d-c {
+  flex-direction: column;
+}
+
+.center {
+  justify-content: center;
+}
+
+.s-between {
+  justify-content: space-between;
+}
+
+.s-around {
+  justify-content: space-around;
+}
+
 header {
   margin-top: 10px;
   justify-content: center;
