@@ -1,13 +1,16 @@
 import loadShows from './loadShows.js';
+
 const showModal = document.querySelector('#modal-section');
 const popModal = document.createElement('div');
 popModal.setAttribute('class', 'modal');
-const commentsPopUp = async (data) => {
+const commentsPopUp = async (data, id) => {
   document.body.addEventListener('click', (event) => {
     if (event.target.className === 'comment-btn') {
-      const commentId = event.target.parentNode.querySelector('button').id;
+      const commentId = id;
       data.forEach((show) => {
+        show = show.show;
         const showId = show.id;
+        /* console.log(showId,commentId) */
         if (showId.toString() === commentId.toString()) {
           popModal.innerHTML = `<div class="modal-content">
   <span class="d-flex jc-flex-end"><i class="fas fa-window-close" aria-hidden="true"></i></span>
@@ -20,7 +23,6 @@ const commentsPopUp = async (data) => {
       <h4 class="d-flex mt-1">Language: ${show.language}</h4>
       </div>
       <h3 class="d-flex center"><i class="fa fa-fw fa-comment mb-5"></i>  Comments(0)</h3>
-
       <div class="flex-d-c mb-5 ">
       <ul class="d-flex s-around comment-list-header font-w-bold">
       <li>Date</li> <li>By</li> <li> Comment</li>
@@ -56,5 +58,4 @@ const commentsPopUp = async (data) => {
   });
   await loadShows();
 };
-
 export default commentsPopUp;
