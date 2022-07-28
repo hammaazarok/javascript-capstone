@@ -242,3 +242,18 @@ h6 {
 .font-w-bold {
   font-weight: bold;
 }
+
+.comments-list-body {
+  background: rgb(224, 228, 233);
+  box-shadow: 0 2px 4px 0 rgb(54, 54, 54);
+  padding: 10px;
+  font-weight: bold;
+  width: 90%;
+  margin: 0 auto;
+  height: 10%;
+  overscroll-behavior: contain;
+}
+
+.vierwerCommentList:nth-child(even) {
+  background: #fbfdff;
+}
