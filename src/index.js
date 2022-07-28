@@ -2,7 +2,7 @@ import './index.css';
 import loadShows from './loadShows.js';
 import { addNewLike, countLikes, likeUpdate } from './Likes.js';
 import commentsPopUp from './commentsPopUp.js';
-import countShows from './showsCounter.js'
+import countShows from './showsCounter.js';
 
 loadShows().then().then((value) => {
   const likesButtons = document.querySelectorAll('.like');
