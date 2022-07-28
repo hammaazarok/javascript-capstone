@@ -106,6 +106,16 @@ const commentsPopUp = async (data, id) => {
       });
     }
   });
+  showModal.appendChild(popModal);
+  showModal.style.display = 'block';
+  const closeBtn = document.querySelector('.fa-window-close');
+  document.addEventListener('click', (event) => {
+    if (event.target === closeBtn) {
+      showModal.style.display = 'none';
+      window.location.reload();
+    }
+  });
+
   await loadShows();
 };
 export default commentsPopUp;
