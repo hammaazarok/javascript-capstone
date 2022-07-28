@@ -1,19 +1,47 @@
-const Likes = [{
-  id: '44660',
-  likes: 83,
-},
-{
-  id: '6048',
-  likes: 2,
-}];
+let Likes = [];
+const loadLikes = async () => {
+  const getLikesData = async () => {
+    const request = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PaPkcuuefChRyB9FOnQ0/likes');
+    const data = await request.json();
+    return data;
+  };
+
+  await getLikesData().then(
+    (value) => {
+      const newLikes = [];
+      value.forEach((element) => {
+        newLikes.push({
+          id: element.item_id,
+          likes: element.likes,
+        });
+      });
+      Likes = newLikes;
+    },
+    (error) => {
+      throw error;
+    },
+  );
+};
+
 const countLikes = (showId) => {
+  showId += '';
   const numberOfLikes = Likes.filter((a) => a.id === showId)[0];
   return numberOfLikes !== undefined ? numberOfLikes.likes : 0;
 };
 
 const likeUpdate = (showId, newValue) => {
-  Likes.filter((a) => a.id === showId)[0].likes = newValue;
+  if (Likes.filter((a) => a.id === showId)[0] !== undefined) {
+    Likes.filter((a) => a.id === showId)[0].likes = newValue;
+  } else {
+    Likes.push(
+      {
+        id: showId,
+        likes: newValue,
+      },
+    );
+  }
 };
+
 const addNewLike = (showId) => {
   const SentToApi = async () => {
     const request = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/PaPkcuuefChRyB9FOnQ0/likes/', {
@@ -37,4 +65,6 @@ const addNewLike = (showId) => {
   );
 };
 
-export { addNewLike, countLikes, likeUpdate };
+export {
+  addNewLike, countLikes, likeUpdate, loadLikes,
+};

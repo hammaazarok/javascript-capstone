@@ -3,7 +3,7 @@ import loadShows from './loadShows.js';
 import { addNewLike, countLikes, likeUpdate } from './Likes.js';
 import commentsPopUp from './commentsPopUp.js';
 
-loadShows().then((value) => {
+loadShows().then().then((value) => {
   const likesButtons = document.querySelectorAll('.like');
   likesButtons.forEach((show) => {
     show.addEventListener('click', () => {
