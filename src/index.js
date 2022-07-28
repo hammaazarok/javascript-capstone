@@ -4,7 +4,7 @@ import { addNewLike, countLikes, likeUpdate } from './Likes.js';
 import commentsPopUp from './commentsPopUp.js';
 import countShows from './showsCounter.js';
 
-loadShows().then().then((value) => {
+loadShows().then((value) => {
   const likesButtons = document.querySelectorAll('.like');
   likesButtons.forEach((show) => {
     show.addEventListener('click', () => {
