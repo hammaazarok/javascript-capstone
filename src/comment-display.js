@@ -5,7 +5,6 @@ const endPoint = '/comments';
 const fetchComment = async (showId) => {
   const response = await fetch(`${commentUrl + appId + endPoint}?item_id=${showId}`);
   return response.json();
-  
 };
 
 // Add comment
@@ -17,7 +16,7 @@ const addMovieComment = async (viewerInfo) => {
     },
     body: JSON.stringify(viewerInfo),
   });
-   console.log(viewerInfo);
+  // console.log(viewerInfo);
   const commentData = await response.text();
   return commentData;
 };
