@@ -21,6 +21,10 @@ an api based app to show lastest shows (movies , series)
 - CSS
 - Javascript
 
+## Live Demo
+
+[Live Demo Link](https://hammaazarok.github.io/javascript-capstone/)
+
 ## Authors
 
 👤 **Hamma**
