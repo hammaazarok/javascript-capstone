@@ -1,22 +1,13 @@
-import totalComments from './comment-count';
-import addShowToDom from './addShowToDom.js';
 import { addMovieComment, fetchComment } from './comment-display.js';
-
+import totalComments from './comment-count.js';
 const showModal = document.querySelector('#modal-section');
 const popModal = document.createElement('div');
 
-/*const commentsPopUp = async (data, id) => {
+const commentsPopUp = async (data, id) => {
   popModal.setAttribute('class', 'modal');
 
   const commentId = id;
-  const countComment = totalComments(list);
-  data.forEach((show) => {*/
-  document.body.addEventListener('click', async (event) => {
-    if (event.target.className === 'comment-btn') {
-      const commentId = event.target.parentNode.querySelector('button').id;
-      const list = await fetchComment(commentId);
-      const countComment = totalComments(list);
-      data.forEach((show) => {
+  data.forEach(async (show) => {
     show = show.show;
     const showId = show.id;
     if (showId.toString() === commentId.toString()) {
@@ -30,7 +21,7 @@ const popModal = document.createElement('div');
       <p class="d-flex show-desc">${show.summary}</p>
       <h4 class="d-flex mt-1">Language: ${show.language}</h4>
       </div>
-      <h3 class="d-flex center text-success"><i class="mb-5 commentsTotal s-around">${countComment}</i><p> Comment(s)</p></h3>
+<h3 class="d-flex center comments-count"><i class="fa fa-fw fa-comment mb-5"></i>  Comments(0)</h3>
       <div class="flex-d-c mb-5 ">
       <ul class="d-flex s-around comment-list-header font-w-bold">
       <li>posted</li> <li>By</li> <li> Comment</li>
@@ -52,7 +43,6 @@ const popModal = document.createElement('div');
   });
   showModal.appendChild(popModal);
   showModal.style.display = 'block';
-
   let closeBtn = document.querySelector('.fa-window-close');
   document.addEventListener('click', (event) => {
     if (event.target === closeBtn) {
@@ -87,40 +77,38 @@ const popModal = document.createElement('div');
 }</span>  <span>${viewerComment.value}</span></li>
            `;
     commentSection.appendChild(commentList);
-
   };
   // Show Comments
   const displayComment = async (commentId) => {
     const allComments = await fetchComment(commentId);
     try {
-      allComments.forEach((data) => {
+      allComments.forEach( async (data) => {
         commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList">
            <span>${data.creation_date}</span>  <span>${data.username}</span>  <span>${data.comment}</span></li>
            `;
         commentSection.appendChild(commentList);
+        console.log(allComments)
+        const comments = document.querySelector('.comments-count')
+        comments.innerHTML = '<i class="fa fa-fw fa-comment mb-5"></i>  Comments('+ await totalComments(allComments)+')'
+        
       });
     } catch (err) {
-      commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList">${err.dara}</li>
+      console.log(err)
+      commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList">No Comments</li>
            `;
       commentSection.appendChild(commentList);
     }
   };
   displayComment(commentId);
   const commentsBtn = document.querySelector('#commentBtn');
-  const commentTotal = document.querySelector('.commentsTotal');
   // listen to users enevent
   commentsBtn.addEventListener('click', (e) => {
     e.preventDefault();
     submitViewerInfo();
     updateComments();
-    commentTotal.innerHTML = parseInt(commentTotal.innerText, 10) + 1;
     viewerUserName.value = '';
     viewerComment.value = '';
   });
-} 
-  });
-
-await addShowToDom();
 
   showModal.appendChild(popModal);
   showModal.style.display = 'block';
@@ -131,5 +119,5 @@ await addShowToDom();
       window.location.reload();
     }
   });
-
+};
 export default commentsPopUp;

@@ -15,15 +15,13 @@ const loadShows = async () => {
   await getShowsData().then(
     (value) => {
       value.forEach((item) => {
+        const reg = /(<([^>]+)>)/ig
         addShow(
           item.show.name.substring(0, 22),
           item.show.image.medium,
           `${item.show.summary
             .substring(0, 60)
-            .replace('<p>', '')
-            .replace('</p>', '')
-            .replace('<b>', '')
-            .replace('</b>', '')} ...`,
+            .replaceAll(reg, '').replace('<b', '')} ...`,
           false,
           countLikes(item.show.id),
           item.show.id,
