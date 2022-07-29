@@ -75,6 +75,7 @@ h2 {
   gap: 15px;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 60px;
 }
 
 .card img {
@@ -268,10 +269,11 @@ footer {
   padding: 15px;
   color: rgb(2, 2, 2);
   background-color: rgb(207, 206, 206);
+  display: flex;
+  justify-content: center;
 }
 
 .foot-note {
-  margin-left: 12%;
   font-weight: bold;
   width: 100%;
 }
