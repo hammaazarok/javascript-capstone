@@ -1,13 +1,22 @@
+import totalComments from './comment-count';
+import addShowToDom from './addShowToDom.js';
 import { addMovieComment, fetchComment } from './comment-display.js';
 
 const showModal = document.querySelector('#modal-section');
 const popModal = document.createElement('div');
 
-const commentsPopUp = async (data, id) => {
+/*const commentsPopUp = async (data, id) => {
   popModal.setAttribute('class', 'modal');
 
   const commentId = id;
-  data.forEach((show) => {
+  const countComment = totalComments(list);
+  data.forEach((show) => {*/
+  document.body.addEventListener('click', async (event) => {
+    if (event.target.className === 'comment-btn') {
+      const commentId = event.target.parentNode.querySelector('button').id;
+      const list = await fetchComment(commentId);
+      const countComment = totalComments(list);
+      data.forEach((show) => {
     show = show.show;
     const showId = show.id;
     if (showId.toString() === commentId.toString()) {
@@ -21,7 +30,7 @@ const commentsPopUp = async (data, id) => {
       <p class="d-flex show-desc">${show.summary}</p>
       <h4 class="d-flex mt-1">Language: ${show.language}</h4>
       </div>
-      <h3 class="d-flex center"><i class="fa fa-fw fa-comment mb-5"></i>  Comments(0)</h3>
+      <h3 class="d-flex center text-success"><i class="mb-5 commentsTotal s-around">${countComment}</i><p> Comment(s)</p></h3>
       <div class="flex-d-c mb-5 ">
       <ul class="d-flex s-around comment-list-header font-w-bold">
       <li>posted</li> <li>By</li> <li> Comment</li>
@@ -43,6 +52,7 @@ const commentsPopUp = async (data, id) => {
   });
   showModal.appendChild(popModal);
   showModal.style.display = 'block';
+
   let closeBtn = document.querySelector('.fa-window-close');
   document.addEventListener('click', (event) => {
     if (event.target === closeBtn) {
@@ -77,6 +87,7 @@ const commentsPopUp = async (data, id) => {
 }</span>  <span>${viewerComment.value}</span></li>
            `;
     commentSection.appendChild(commentList);
+
   };
   // Show Comments
   const displayComment = async (commentId) => {
@@ -96,14 +107,20 @@ const commentsPopUp = async (data, id) => {
   };
   displayComment(commentId);
   const commentsBtn = document.querySelector('#commentBtn');
+  const commentTotal = document.querySelector('.commentsTotal');
   // listen to users enevent
   commentsBtn.addEventListener('click', (e) => {
     e.preventDefault();
     submitViewerInfo();
     updateComments();
+    commentTotal.innerHTML = parseInt(commentTotal.innerText, 10) + 1;
     viewerUserName.value = '';
     viewerComment.value = '';
   });
+} 
+  });
+
+await addShowToDom();
 
   showModal.appendChild(popModal);
   showModal.style.display = 'block';
@@ -114,5 +131,5 @@ const commentsPopUp = async (data, id) => {
       window.location.reload();
     }
   });
-};
+
 export default commentsPopUp;
