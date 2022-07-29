@@ -1,4 +1,4 @@
-import totalComments from './comment-count';
+import totalComments from './comment-count.js';
 
 const comment = [
   {

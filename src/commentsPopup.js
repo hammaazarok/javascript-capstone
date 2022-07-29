@@ -1,5 +1,6 @@
 import { addMovieComment, fetchComment } from './comment-display.js';
 import totalComments from './comment-count.js';
+
 const showModal = document.querySelector('#modal-section');
 const popModal = document.createElement('div');
 
@@ -82,18 +83,15 @@ const commentsPopUp = async (data, id) => {
   const displayComment = async (commentId) => {
     const allComments = await fetchComment(commentId);
     try {
-      allComments.forEach( async (data) => {
+      allComments.forEach(async (data) => {
         commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList">
            <span>${data.creation_date}</span>  <span>${data.username}</span>  <span>${data.comment}</span></li>
            `;
         commentSection.appendChild(commentList);
-        console.log(allComments)
-        const comments = document.querySelector('.comments-count')
-        comments.innerHTML = '<i class="fa fa-fw fa-comment mb-5"></i>  Comments('+ await totalComments(allComments)+')'
-        
+        const comments = document.querySelector('.comments-count');
+        comments.innerHTML = `<i class="fa fa-fw fa-comment mb-5"></i>  Comments(${await totalComments(allComments)})`;
       });
     } catch (err) {
-      console.log(err)
       commentList.innerHTML += `<li class="d-flex s-around vierwerCommentList">No Comments</li>
            `;
       commentSection.appendChild(commentList);

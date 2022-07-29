@@ -15,7 +15,7 @@ const loadShows = async () => {
   await getShowsData().then(
     (value) => {
       value.forEach((item) => {
-        const reg = /(<([^>]+)>)/ig
+        const reg = /(<([^>]+)>)/ig;
         addShow(
           item.show.name.substring(0, 22),
           item.show.image.medium,
